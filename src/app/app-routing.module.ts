@@ -1,8 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {CustomerListComponent} from './customer-list/customer-list.component';
+import {CreateCustomerComponent} from './create-customer/create-customer.component';
+import {UpdateCustomerComponent} from './update-customer/update-customer.component';
+import {CustomerDetailsComponent} from './customer-details/customer-details.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', redirectTo: 'customer', pathMatch: 'full'},
+  {path: 'customers', component: CustomerListComponent},
+  {path: 'add', component: CreateCustomerComponent},
+  {path: 'update/:id', component: UpdateCustomerComponent},
+  {path: 'details/:id', component: CustomerDetailsComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
